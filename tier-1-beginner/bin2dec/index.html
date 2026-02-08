@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bin2dec</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Base Converter</h1>
+            <p class="subtitle">Binary to Decimal Conversion</p>
+            <div class="converter-section">
+                <div class="input-group">
+                    <label for="binaryInput">
+                        Enter Binary Number (max 8 digits)
+                    </label>
+                    <input type="text" id="binaryInput" placeholder="e.g 1001" autocomplete="off">
+                    <small class="hint">Only 0s and 1s are valid | Max 8 digit</small>
+                </div>
+                <div class="button-group">
+                    <button id="convertBtn" class="btn-primary">Convert</button>
+                    <button id="clearBtn" class="btn-secondary">Clear</button>
+                </div>
+                <div id="errorMessage" class="error-message hidden">
+                </div>
+                <div class="output-group">
+                    <label>Decimal Result</label>
+                    <div id="decimalOutput" class="output-display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
