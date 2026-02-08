@@ -20,10 +20,10 @@ function isValidBinary(input) {
             };
         }
     }
-    if (input.length > 8) {
+    if (input.length > 1000) {
         return {
             valid: false,
-            message: "Cannot exceed 8 digit"
+            message: "Cannot exceed 1000 digit"
         };
     }
     return {
