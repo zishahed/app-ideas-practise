@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #FFE5E5, #E0F7F4);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.calculator {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f0f0f0;
+}
+
+.calculator-title {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ff0000, #00ffee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.display-section {
+    background: #FAFAFA;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
+}
+
+.input-display {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    font-size: 1rem;
+    color: #6B7280;
+    text-align: left;
+    min-height: 30px;
+    font-family: 'Courier New', monospace;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+}
+
+.result-display {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: right;
+    background: linear-gradient(135deg, #F59E0B, #EF4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.btn {
+    padding: 18px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-function {
+    background: white;
+    color: #8B5CF6;
+    border: 2px solid #8B5CF6;
+    font-size: 0.9rem;
+}
+
+.btn-function:hover {
+    background: #F5F3FF;
+}
+
+.btn-bracket {
+    background: white;
+    color: #3B82F6;
+    border: 2px solid #3B82F6;
+    font-size: 1.1rem;
+}
+
+.btn-bracket:hover {
+    background: #EFF6FF;
+}
+
+.btn-special {
+    background: white;
+    color: #10B981;
+    border: 2px solid #10B981;
+    font-size: 0.9rem;
+}
+
+.btn-special:hover {
+    background: #D1FAE5;
+}
+
+.btn-clear {
+    background: linear-gradient(135deg, #EF4444, #DC2626);
+    color: white;
+    font-weight: 700;
+}
+
+.btn-clear:hover {
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn-delete {
+    background: white;
+    color: #F59E0B;
+    border: 2px solid #F59E0B;
+    font-weight: 700;
+}
+
+.btn-delete:hover {
+    background: #FEF3C7;
+}
+
+.btn-number {
+    background: #F9FAFB;
+    color: #1F2937;
+    border: 1px solid #E5E7EB;
+    font-size: 1.2rem;
+}
+
+.btn-number:hover {
+    background: #F3F4F6;
+}
+
+.btn-operator {
+    background: white;
+    color: #7C3AED;
+    border: 2px solid #7C3AED;
+    font-size: 1.1rem;
+}
+
+.btn-operator:hover {
+    background: #F5F3FF;
+}
+
+.btn-equals {
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    grid-row: span 2;
+}
+
+.btn-equals:hover {
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 15px 8px;
+        font-size: 0.9rem;
+    }
+
+    .current-display {
+        font-size: 1.5rem;
+    }
+
+    .btn-number {
+        font-size: 1.1rem;
+    }
+
+    .btn-function,
+    .btn-special {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .button-grid {
+        gap: 6px;
+    }
+
+    .btn {
+        padding: 12px 6px;
+        font-size: 0.85rem;
+    }
+
+    .current-display {
+        font-size: 1.3rem;
+    }
+}
