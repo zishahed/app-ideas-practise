@@ -2,45 +2,121 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    font-family: sans-serif;
-    background-color: azure;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
 }
 
 #container {
     width: 100%;
-    max-width: 500px;
-}
-
-#card {
-    background: white;
-    border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #f0f0f0;
     display: flex;
-    flex-direction: column;
-    gap: 50px;
     justify-content: center;
     align-items: center;
 }
 
-#shape {
-    border-radius: 25px;
-    background-color: #89d71c;
-    padding: 20px;
-    width: 200px;
-    height: 150px;
+#card {
+    width: 1000px;
+    height: 525px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-input {
-    margin-bottom: 12px;
+#shape {
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
+    background: azure;
+    border-radius: 140px 120px 160px 120px / 140px 120px 160px 130px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#left {
+    align-items: center;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#slider {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 10px;
+}
+
+#slider h3 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+#slider input[type="range"] {
+    width: 100%;
+    height: 6px;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+#slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#slider input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+#text-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#text-field input[type="text"] {
     width: 300px;
-    
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+#copy {
+    width: 100px;
+    height: 40px;
+    padding: 6px 12px;
+    background: #4f46e5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#copy:hover {
+    background: #3730a3;
 }
