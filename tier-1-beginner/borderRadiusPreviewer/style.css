@@ -38,7 +38,7 @@ body {
     height: 320px;
     flex-shrink: 0;
     background: azure;
-    border-radius: 40px 20px 60px 20px / 40px 20px 60px 30px;
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 

@@ -1,29 +1,29 @@
 const element = document.getElementById("shape");
-const cssObj = window.getComputedStyle(element, null);
 let textObj = document.getElementById("text-field");
+const sliders = ["htl", "htr", "hbr", "hbl", "vtl", "vtr", "vbr", "vbl"];
 
 // Need all four radius
-const tl = cssObj.borderTopLeftRadius;
-const tr = cssObj.borderTopRightRadius;
-const br = cssObj.borderBottomRightRadius;
-const bl = cssObj.borderBottomLeftRadius;
+function updateBorderRadius() {
+    const [htl, htr, hbr, hbl, vtl, vtr, vbr, vbl] = sliders.map(id =>
+        document.getElementById(`${id}Slider`).value
+    );
+    const fullRadius = `${htl}% ${htr}% ${hbr}% ${hbl}% / ${vtl}% ${vtr}% ${vbr}% ${vbl}%`;
+    shape.style.borderRadius = fullRadius;
+    textObj.innerHTML = fullRadius;
+}
 
-// each values above contains two values like "40px 40px"
-// they are the horizontal and vertical values
-// we need to store them in horizontal and vertical variable
-
-let h = [tl, tr, br, bl].map(v => v.split(" ")[0]);
-let v = [tl, tr, br, bl].map(v => v.split(" ")[1] || v.split(" ")[0]);
-
-let fullRadius = `${h.join(" ")} / ${v.join(" ")}`;
-
-textObj.innerHTML = fullRadius;
+sliders.forEach(id => {
+    document.getElementById(`${id}Slider`).addEventListener("input", updateBorderRadius);
+});
 
 const copyFunction = async () => {
     try {
-        await navigator.clipboard.writeText(fullRadius);
+        copyText = textObj.innerHTML;
+        await navigator.clipboard.writeText(copyText);
         console.log('Content copied to clipboard');
-    } catch(err) {
-        console.err('Failed to copy', err);
+    } catch (err) {
+        console.error('Failed to copy', err);
     }
 }
+
+updateBorderRadius();
