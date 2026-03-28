@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Cycle</title>
+</head>
+<body>
+    <div id="container">
+
+        <h2>Color Cycle</h2>
+        <div class="field">
+            <label>Color Format</label>
+            <select id="colorFormat">
+                <option value="RGB">RGB</option>
+                <option value="HEX">HEX</option>
+                <option value="HSL">HSL</option>
+                <option value="HSV">HSV</option>
+                <option value="HWB">HWB</option>
+                <option value="CMYK">CMYK</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Starting Color Code</label>
+            <input type="text" id="startColor" placeholder="e.g. #a259ff or 120,80,50" />
+        </div>
+
+        <div class="field">
+            <label>Increment / Decrement</label>
+            <div class="stepper">
+                <button class="step-btn" id="decBtn">&#8722;</button>
+                <span id="stepValue">0</span>
+                <button class="step-btn" id="incBtn">&#43;</button>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Time Interval (ms)</label>
+            <input type="number" id="timeInterval" placeholder="e.g. 500" min="50" />
+        </div>
+
+        <button id="startBtn">Start</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
